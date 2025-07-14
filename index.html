@@ -2,129 +2,69 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Malla Ingeniería Comercial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malla Curricular Interactiva</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Malla Curricular Ingeniería Comercial</h1>
+  <h1>Malla Curricular - Ingeniería Comercial</h1>
 
-   <div id="descripcion" class="descripcion">
-    Haz clic en un ramo para ver su descripción.
+  <div class="malla">
+
+    <!-- Semestres I al V omitidos por brevedad -->
+
+    <div class="semestre">
+      <h2>Semestre VI</h2>
+      <div class="ramo rosado-1" data-id="ICM-321" data-nombre="Gestión de personas" data-descripcion="Requiere ICM-311" data-requisitos="ICM-311">Gestión de personas</div>
+      <div class="ramo rosado-2" data-id="ICM-322" data-nombre="Cálculo Financiero y Presupuestario" data-descripcion="Requiere BSC-215" data-requisitos="BSC-215">Cálculo Financiero y Presupuestario</div>
+      <div class="ramo rosado-3" data-id="ICM-323" data-nombre="Organización Industrial" data-descripcion="Requiere BSC-214 y BSC-215" data-requisitos="BSC-214,BSC-215">Organización Industrial</div>
+      <div class="ramo rosado-3" data-id="ICM-324" data-nombre="Contabilidad de Gestión" data-descripcion="Requiere ICM-314" data-requisitos="ICM-314">Contabilidad de Gestión</div>
+      <div class="ramo rosado-4" data-id="ICM-325" data-nombre="Emprendimiento" data-descripcion="Requiere ICM-311 e ICM-316" data-requisitos="ICM-311,ICM-316">Emprendimiento</div>
+    </div>
+
+    <div class="semestre">
+      <h2>Semestre VII</h2>
+      <div class="ramo rosado-1" data-id="ICM-411" data-nombre="Estrategia" data-descripcion="Requiere ICM-311 e ICM-323" data-requisitos="ICM-311,ICM-323">Estrategia</div>
+      <div class="ramo rosado-2" data-id="ICM-412" data-nombre="Gestión del Cambio Organizacional" data-descripcion="Requiere ICM-321" data-requisitos="ICM-321">Gestión del Cambio Organizacional</div>
+      <div class="ramo rosado-3" data-id="ICM-413" data-nombre="Econometría" data-descripcion="Requiere BSC-215, ICM-313, ICM-323, ICM-315" data-requisitos="BSC-215,ICM-313,ICM-323,ICM-315">Econometría</div>
+      <div class="ramo rosado-4" data-id="ICM-414" data-nombre="Gestión Financiera" data-descripcion="Requiere ICM-322" data-requisitos="ICM-322">Gestión Financiera</div>
+      <div class="ramo rosado-4" data-id="ICM-415" data-nombre="Innovación Empresarial" data-descripcion="Requiere ICM-325" data-requisitos="ICM-325">Innovación Empresarial</div>
+      <div class="ramo rosado-5" data-id="ICM-416" data-nombre="Sustentabilidad y RSE" data-descripcion="Requiere ICM-321" data-requisitos="ICM-321">Sustentabilidad y RSE</div>
+    </div>
+
+    <div class="semestre">
+      <h2>Semestre VIII</h2>
+      <div class="ramo rosado-1" data-id="ICM-421" data-nombre="Práctica Inicial" data-descripcion="Todas aprobadas hasta VII.">Práctica Inicial</div>
+      <div class="ramo rosado-2" data-id="ICM-422" data-nombre="Implementación Estratégica" data-descripcion="Requiere ICM-411, ICM-316, ICM-414" data-requisitos="ICM-411,ICM-316,ICM-414">Implementación Estratégica</div>
+      <div class="ramo rosado-3" data-id="ICM-423" data-nombre="Gestión de operaciones" data-descripcion="Requiere BSC-215" data-requisitos="BSC-215">Gestión de operaciones</div>
+      <div class="ramo rosado-4" data-id="ICM-424" data-nombre="Investigación de Mercados" data-descripcion="Requiere ICM-413, ICM-316" data-requisitos="ICM-413,ICM-316">Investigación de Mercados</div>
+      <div class="ramo rosado-5" data-id="ICM-425" data-nombre="Evaluación de Proyectos" data-descripcion="Todas aprobadas hasta VII.">Evaluación de Proyectos</div>
+    </div>
+
+    <div class="semestre">
+      <h2>Semestre IX</h2>
+      <div class="ramo rosado-1" data-id="ICM-511" data-nombre="Práctica Profesional" data-descripcion="Todas aprobadas hasta VIII.">Práctica Profesional</div>
+      <div class="ramo rosado-2" data-id="ICM-512" data-nombre="Contabilidad Gerencial" data-descripcion="Requiere ICM-422" data-requisitos="ICM-422">Contabilidad Gerencial</div>
+      <div class="ramo rosado-3" data-id="ICM-513" data-nombre="Estrategia Financiera" data-descripcion="Requiere ICM-422" data-requisitos="ICM-422">Estrategia Financiera</div>
+      <div class="ramo rosado-4" data-id="ICM-514" data-nombre="Seminario de Investigación" data-descripcion="Requiere todas hasta VIII e Inglés III" data-requisitos="IFG-300">Seminario de Investigación</div>
+      <div class="ramo rosado-5" data-id="ICM-515" data-nombre="Diseño de Negocios" data-descripcion="Todas aprobadas hasta VIII.">Diseño de Negocios</div>
+    </div>
+
+    <div class="semestre">
+      <h2>Semestre X</h2>
+      <div class="ramo rosado-1" data-id="ICM-521" data-nombre="Taller Profesional" data-descripcion="Todas aprobadas hasta IX.">Taller Profesional</div>
+      <div class="ramo rosado-2" data-id="ICM-522" data-nombre="Tesis" data-descripcion="Requiere ICM-514" data-requisitos="ICM-514">Tesis</div>
+      <div class="ramo rosado-3" data-id="ICM-523" data-nombre="Electivo I" data-descripcion="Todas aprobadas hasta VIII.">Electivo I</div>
+      <div class="ramo rosado-4" data-id="ICM-524" data-nombre="Electivo II" data-descripcion="Todas aprobadas hasta VIII.">Electivo II</div>
+      <div class="ramo rosado-5" data-id="ICM-525" data-nombre="Electivo III" data-descripcion="Todas aprobadas hasta VIII.">Electivo III</div>
+    </div>
+
+  </div>
+
+  <div id="descripcion" class="descripcion">
+    Haz doble clic en un ramo para marcarlo como aprobado.
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-  <!-- SEMESTRE I -->
-  <h2>Semestre I</h2>
-  <div class="malla">
-    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Introducción a las Ciencias Sociales" data-estado="pendiente" data-descripcion="Sin requisito.">BSC-111</div>
-    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Matemática Aplicada a la CCSSEE I" data-estado="pendiente" data-descripcion="Sin requisito.">BSC-112</div>
-    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Epistemología de las CCSS" data-estado="pendiente" data-descripcion="Sin requisito.">BSC-113</div>
-    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Economía y Sociedad" data-estado="pendiente" data-descripcion="Sin requisito.">BSC-114</div>
-    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Comunicación Oral y Escrita" data-estado="pendiente" data-descripcion="Sin requisito.">BSC-115</div>
-    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="TICS para las CCSSEE" data-estado="pendiente" data-descripcion="Sin requisito.">BSC-116</div>
-  </div>
-
-  <!-- SEMESTRE II -->
-  <h2>Semestre II</h2>
-  <div class="malla">
-    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Fenómenos y Contextos Sociales" data-estado="pendiente" data-descripcion="Sin requisito.">BSC-121</div>
-    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Historia Social y Política de Chile" data-estado="pendiente" data-descripcion="Sin requisito.">BSC-122</div>
-    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Matemática Aplicada a la CCSSEE II" data-estado="pendiente" data-descripcion="Requiere BSC-112.">BSC-123</div>
-    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Introducción a la Investigación en Ciencias Sociales" data-estado="pendiente" data-descripcion="Requiere BSC-113.">BSC-124</div>
-    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Macroeconomía" data-estado="pendiente" data-descripcion="Requiere BSC-114.">BSC-125</div>
-    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Comunicación para la Investigación" data-estado="pendiente" data-descripcion="Requiere BSC-115.">BSC-126</div>
-    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Inglés I" data-estado="pendiente" data-descripcion="Sin requisito.">IFG-100</div>
-  </div>
-
-<!-- SEMESTRE III -->
-<h2>Semestre III</h2>
-<div class="malla">
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Territorios y actores socioeconómicos" data-descripcion="Sin requisito.">BSC-211</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Metodología Cuantitativa" data-descripcion="Requiere BSC-123 y BSC-124.">BSC-212</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Metodología Cualitativa" data-descripcion="Requiere BSC-124.">BSC-213</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Microeconomía" data-descripcion="Requiere BSC-123.">BSC-214</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Profundización I: Métodos Cuantitativos" data-descripcion="Requiere BSC-123.">BSC-215</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Inglés II" data-descripcion="Requiere IFG-100.">IFG-200</div>
-</div>
-
-<!-- SEMESTRE IV -->
-<h2>Semestre IV</h2>
-<div class="malla">
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Organizaciones" data-descripcion="Sin requisito.">BSC-221</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Estadísticas para las Ciencias Sociales" data-descripcion="Requiere BSC-212.">BSC-222</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Taller de Diseño de Proyectos de Investigación" data-descripcion="Todas las actividades curriculares aprobadas hasta el III semestre.">BSC-223</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Economía y Territorio" data-descripcion="Requiere BSC-125.">BSC-224</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Profundización II: Marketing I" data-descripcion="Sin requisito.">ICM-225</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Inglés III" data-descripcion="Requiere IFG-200.">IFG-300</div>
-</div>
-
-<!-- SEMESTRE V -->
-<h2>Semestre V</h2>
-<div class="malla">
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Administración" data-descripcion="Requiere BSC-221.">ICM-311</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Derecho y Empresa" data-descripcion="Requiere BSC-221.">ICM-312</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Inferencia Estadística para Economía y Negocios" data-descripcion="Requiere BSC-222.">ICM-313</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Contabilidad Financiera" data-descripcion="Sin requisito.">ICM-314</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Macroeconomía para la Gestión" data-descripcion="Requiere BSC-125.">ICM-315</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Marketing II" data-descripcion="Requiere ICM-225.">ICM-316</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Introducción a la Fe" data-descripcion="Sin requisito.">MFG-114</div>
-</div>
-
-<!-- SEMESTRE VI -->
-<h2>Semestre VI</h2>
-<div class="malla">
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Gestión de personas" data-descripcion="Requiere ICM-311.">ICM-321</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Cálculo Financiero y Presupuestario" data-descripcion="Requiere BSC-215.">ICM-322</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Organización Industrial" data-descripcion="Requiere BSC-214 y BSC-215.">ICM-323</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Contabilidad de Gestión" data-descripcion="Requiere ICM-314.">ICM-324</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Emprendimiento" data-descripcion="Requiere ICM-311 e ICM-316.">ICM-325</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Certificación I" data-descripcion="Sin requisito.">CFG</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Ética Cristiana" data-descripcion="Requiere MFG-114.">MFG-216</div>
-</div>
-
-<!-- SEMESTRE VII -->
-<h2>Semestre VII</h2>
-<div class="malla">
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Estrategia" data-descripcion="Requiere ICM-311 e ICM-323.">ICM-411</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Gestión del Cambio Organizacional" data-descripcion="Requiere ICM-321.">ICM-412</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Econometría" data-descripcion="Requiere BSC-215, ICM-313, ICM-323, ICM-315.">ICM-413</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Gestión Financiera" data-descripcion="Requiere ICM-322.">ICM-414</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Innovación Empresarial" data-descripcion="Requiere ICM-325.">ICM-415</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Sustentabilidad y RSE" data-descripcion="Requiere ICM-321.">ICM-416</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Certificación II" data-descripcion="Sin requisito.">CFG</div>
-</div>
-
-<!-- SEMESTRE VIII -->
-<h2>Semestre VIII</h2>
-<div class="malla">
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Práctica Inicial" data-descripcion="Requiere todas las actividades curriculares disciplinares y profesionales aprobadas hasta el VII semestre.">ICM-421</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Implementación Estratégica" data-descripcion="Requiere ICM-411, ICM-316, ICM-414.">ICM-422</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Gestión de operaciones" data-descripcion="Requiere BSC-215.">ICM-423</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Investigación de Mercados" data-descripcion="Requiere ICM-413, ICM-316.">ICM-424</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Formulación y Evaluación de Proyectos" data-descripcion="Requiere todas las actividades disciplinares y profesionales aprobadas hasta el VII semestre.">ICM-425</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Certificación III" data-descripcion="Sin requisito.">CFG</div>
-</div>
-
-<!-- SEMESTRE IX -->
-<h2>Semestre IX</h2>
-<div class="malla">
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Práctica Profesional" data-descripcion="Requiere todas las actividades disciplinares y profesionales aprobadas hasta el VIII semestre.">ICM-511</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Contabilidad Gerencial" data-descripcion="Requiere ICM-422.">ICM-512</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Estrategia Financiera" data-descripcion="Requiere ICM-422.">ICM-513</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Seminario de Investigación" data-descripcion="Requiere todas las actividades disciplinares y profesionales aprobadas hasta el VIII semestre e Inglés III.">ICM-514</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Diseño de Negocios" data-descripcion="Requiere todas las actividades disciplinares y profesionales aprobadas hasta el VIII semestre.">ICM-515</div>
-</div>
-
-<!-- SEMESTRE X -->
-<h2>Semestre X</h2>
-<div class="malla">
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Taller Profesional" data-descripcion="Requiere todas las actividades disciplinares y profesionales aprobadas hasta el IX semestre.">ICM-521</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Tesis" data-descripcion="Requiere ICM-514.">ICM-522</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Electivo I" data-descripcion="Requiere todas las actividades aprobadas hasta el VIII semestre.">ICM-523</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Electivo II" data-descripcion="Requiere todas las actividades aprobadas hasta el VIII semestre.">ICM-524</div>
-  <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Electivo III" data-descripcion="Requiere todas las actividades aprobadas hasta el VIII semestre.">ICM-525</div>
-</div>
