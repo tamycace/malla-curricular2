@@ -1,23 +1,17 @@
 function mostrarInfo(elemento) {
   const nombre = elemento.getAttribute('data-nombre');
   const descripcion = elemento.getAttribute('data-descripcion');
-
   const divDescripcion = document.getElementById("descripcion");
-  divDescripcion.innerHTML = `
-    <h2>${nombre}</h2>
-    <p>${descripcion}</p>
-    <p><em>Doble clic para marcar como aprobado.</em></p>
-  `;
+  divDescripcion.innerHTML = `<h2>${nombre}</h2><p>${descripcion}</p><p><em>Doble clic para marcar como aprobado.</em></p>`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const ramos = document.querySelectorAll('.ramo');
 
-  // Estado inicial desde localStorage
+  // Aplicar estado guardado
   ramos.forEach(ramo => {
     const id = ramo.dataset.id;
-    const estado = localStorage.getItem(id);
-    if (estado === 'aprobado') {
+    if (localStorage.getItem(id) === 'aprobado') {
       marcarAprobado(ramo);
     }
   });
@@ -26,13 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
   ramos.forEach(ramo => {
     ramo.addEventListener('dblclick', () => {
       const id = ramo.dataset.id;
-      if (ramo.classList.contains('aprobado')) {
-        ramo.classList.remove('aprobado');
-        localStorage.setItem(id, 'pendiente');
-      } else {
-        marcarAprobado(ramo);
-        localStorage.setItem(id, 'aprobado');
-      }
+      const aprobado = ramo.classList.contains('aprobado');
+      ramo.classList.toggle('aprobado');
+      localStorage.setItem(id, aprobado ? 'pendiente' : 'aprobado');
       actualizarColoresDependientes();
     });
   });
@@ -49,22 +39,24 @@ function actualizarColoresDependientes() {
 
   ramos.forEach(ramo => {
     if (!ramo.classList.contains('aprobado')) {
-      const requisitos = ramo.dataset.requisitos?.split(',') || [];
-      const todosCumplidos = requisitos.every(id => {
-        const prereq = document.querySelector(`.ramo[data-id="${id.trim()}"]`);
-        return prereq?.classList.contains('aprobado');
+      const requisitos = (ramo.dataset.requisitos || "").split(",").map(r => r.trim()).filter(Boolean);
+
+      const todosAprobados = requisitos.every(id => {
+        const req = document.querySelector(`.ramo[data-id="${id}"]`);
+        return req && req.classList.contains('aprobado');
       });
 
-      if (todosCumplidos) {
-        // Copiar color del primero de sus requisitos aprobados
-        const primero = requisitos[0]?.trim();
-        const prereq = document.querySelector(`.ramo[data-id="${primero}"]`);
-        if (prereq) {
-          const clases = Array.from(prereq.classList);
-          const colorClase = clases.find(c => c.startsWith('rosado-'));
-          if (colorClase) {
-            ramo.classList.remove('rosado-5');
-            ramo.classList.add(colorClase);
+      if (todosAprobados && requisitos.length > 0) {
+        const primerReq = document.querySelector(`.ramo[data-id="${requisitos[0]}"]`);
+        if (primerReq) {
+          const claseColor = Array.from(primerReq.classList).find(c => c.startsWith('rosado-'));
+          if (claseColor) {
+            // Eliminar clases previas
+            ramo.classList.forEach(c => {
+              if (c.startsWith('rosado-')) ramo.classList.remove(c);
+            });
+            // Aplicar nueva
+            ramo.classList.add(claseColor);
           }
         }
       }
