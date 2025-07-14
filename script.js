@@ -12,7 +12,7 @@ function mostrarInfo(elemento) {
 document.addEventListener('DOMContentLoaded', () => {
   const ramos = document.querySelectorAll('.ramo');
 
-  // Restaurar estados guardados
+  // Restaurar ramos aprobados desde localStorage
   ramos.forEach(ramo => {
     const id = ramo.dataset.id;
     if (localStorage.getItem(id) === 'aprobado') {
@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Escuchar doble clic para marcar como aprobado
   ramos.forEach(ramo => {
     ramo.addEventListener('dblclick', () => {
       const id = ramo.dataset.id;
@@ -40,6 +41,8 @@ function actualizarDisponibilidad() {
     if (ramo.classList.contains('aprobado')) return;
 
     const requisitos = (ramo.dataset.requisitos || "").split(",").map(r => r.trim()).filter(Boolean);
+
+    // Si no tiene requisitos, se considera disponible automáticamente
     const disponibles = requisitos.length === 0 || requisitos.every(id => {
       const req = document.querySelector(`.ramo[data-id="${id}"]`);
       return req && req.classList.contains('aprobado');
