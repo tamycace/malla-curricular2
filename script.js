@@ -1,54 +1,57 @@
-function mostrarInfo(elemento) {
-  const nombre = elemento.getAttribute('data-nombre');
-  const descripcion = elemento.getAttribute('data-descripcion');
-  const divDescripcion = document.getElementById("descripcion");
-  divDescripcion.innerHTML = `
-    <h2>${nombre}</h2>
-    <p>${descripcion}</p>
-    <p><em>Doble clic para marcar como aprobado.</em></p>
-  `;
-}
+document.addEventListener("DOMContentLoaded", function () {
+  const ramos = document.querySelectorAll(".ramo");
+  const descripcion = document.getElementById("descripcion");
 
-document.addEventListener('DOMContentLoaded', () => {
-  const ramos = document.querySelectorAll('.ramo');
+  ramos.forEach((ramo) => {
+    // Mostrar requisitos en el panel al hacer click
+    ramo.addEventListener("click", function () {
+      const nombre = this.dataset.nombre;
+      const desc = this.dataset.descripcion || "";
+      const requisitos = this.dataset.requisitos || "Sin requisitos.";
 
-  // Restaurar estado aprobado desde almacenamiento local
-  ramos.forEach(ramo => {
-    const id = ramo.dataset.id;
-    if (localStorage.getItem(id) === 'aprobado') {
-      ramo.classList.add('aprobado');
-    }
-  });
+      descripcion.innerHTML = `
+        <strong>${nombre}</strong><br />
+        ${desc}<br /><br />
+        <em><strong>Requisitos:</strong> ${requisitos}</em>
+      `;
+    });
 
-  // Agregar eventos de doble clic
-  ramos.forEach(ramo => {
-    ramo.addEventListener('dblclick', () => {
-      const id = ramo.dataset.id;
-      const aprobado = ramo.classList.contains('aprobado');
-      ramo.classList.toggle('aprobado');
-      localStorage.setItem(id, aprobado ? 'pendiente' : 'aprobado');
+    // Doble click para marcar como aprobado
+    ramo.addEventListener("dblclick", function () {
+      if (this.classList.contains("aprobado")) {
+        this.classList.remove("aprobado");
+      } else {
+        this.classList.add("aprobado");
+      }
+
       actualizarDisponibilidad();
     });
   });
 
-  actualizarDisponibilidad();
-});
+  function actualizarDisponibilidad() {
+    const ramos = document.querySelectorAll(".ramo");
+    const aprobados = Array.from(ramos)
+      .filter((r) => r.classList.contains("aprobado"))
+      .map((r) => r.dataset.id);
 
-function actualizarDisponibilidad() {
-  const ramos = document.querySelectorAll('.ramo');
+    ramos.forEach((ramo) => {
+      const requisitos = ramo.dataset.requisitos;
+      if (!requisitos || requisitos === "Sin requisito") {
+        ramo.classList.remove("no-disponible");
+        ramo.classList.add("disponible");
+        return;
+      }
 
-  ramos.forEach(ramo => {
-    if (ramo.classList.contains('aprobado')) return;
+      const requisitosArray = requisitos.split(",").map((r) => r.trim());
+      const cumple = requisitosArray.every((req) => aprobados.includes(req));
 
-    const requisitosTexto = ramo.getAttribute('data-requisitos');
-    const requisitos = requisitosTexto ? requisitosTexto.split(',').map(r => r.trim()) : [];
-
-    const disponibles = requisitos.length === 0 || requisitos.every(id => {
-      const prereq = document.querySelector(`.ramo[data-id="${id}"]`);
-      return prereq && prereq.classList.contains('aprobado');
+      if (cumple) {
+        ramo.classList.remove("no-disponible");
+        ramo.classList.add("disponible");
+      } else {
+        ramo.classList.remove("disponible");
+        ramo.classList.add("no-disponible");
+      }
     });
-
-    ramo.classList.remove('disponible', 'no-disponible');
-    ramo.classList.add(disponibles ? 'disponible' : 'no-disponible');
-  });
-}
+  }
+});
