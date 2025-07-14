@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malla Curricular Interactiva</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Malla Curricular</h1>
+  <div class="malla">
+    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Matemáticas I" data-estado="pendiente" data-descripcion="Introducción al álgebra y funciones.">Matemáticas I</div>
+    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Programación I" data-estado="aprobado" data-descripcion="Lógica básica y estructuras de control.">Programación I</div>
+    <div class="ramo" onclick="mostrarInfo(this)" data-nombre="Estadística" data-estado="en curso" data-descripcion="Estadística descriptiva e inferencial.">Estadística</div>
+  </div>
+
+  <div id="descripcion" class="descripcion">
+    Haz clic en un ramo para ver su descripción.
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
