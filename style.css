@@ -1,7 +1,7 @@
 body {
   font-family: sans-serif;
   margin: 20px;
-  background-color: #fff0f5; /* fondo rosado claro */
+  background-color: #fff0f5;
 }
 
 h1, h2 {
@@ -11,28 +11,63 @@ h1, h2 {
 
 .malla {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: row;
   gap: 15px;
-  margin: 20px;
+  overflow-x: auto;
+  padding: 10px;
+  margin-bottom: 40px;
+  border-bottom: 2px dashed #f8bbd0;
+}
+
+.semestre {
+  min-width: 300px;
+}
+
+.semestre h2 {
+  text-align: center;
 }
 
 .ramo {
-  padding: 15px;
+  padding: 10px;
   border-radius: 12px;
   cursor: pointer;
-  width: 180px;
+  width: 160px;
   text-align: center;
   color: white;
   font-weight: bold;
-  background-color: #f06292; /* color rosado principal */
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease-in-out;
+  margin: 10px auto;
+  transition: transform 0.2s ease-in-out, background-color 0.3s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
 .ramo:hover {
   transform: scale(1.05);
 }
+
+/* TACHADO diagonal */
+.ramo.aprobado {
+  background-color: #fce4ec !important;
+  color: #880e4f;
+  position: relative;
+  opacity: 0.6;
+}
+
+.ramo.aprobado::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  width: 110%;
+  border-top: 3px solid #880e4f;
+  transform: rotate(-45deg);
+}
+
+/* Paleta rosada jerárquica */
+.rosado-1 { background-color: #ad1457; } /* más oscuro */
+.rosado-2 { background-color: #d81b60; }
+.rosado-3 { background-color: #ec407a; }
+.rosado-4 { background-color: #f06292; }
+.rosado-5 { background-color: #f8bbd0; } /* más claro */
 
 .descripcion {
   margin-top: 30px;
@@ -45,9 +80,4 @@ h1, h2 {
   text-align: center;
   border: 2px solid #f8bbd0;
   color: #880e4f;
-}
-.ramo.aprobado {
-  text-decoration: line-through;
-  background-color: #f8bbd0 !important; /* rosado claro */
-  opacity: 0.6;
 }
