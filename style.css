@@ -1,50 +1,48 @@
 body {
   font-family: sans-serif;
   margin: 20px;
-  background-color: #f0f0f0;
+  background-color: #fff0f5; /* fondo rosado claro */
 }
 
-h1 {
+h1, h2 {
   text-align: center;
+  color: #880e4f;
 }
 
 .malla {
   display: flex;
   justify-content: center;
-  gap: 20px;
   flex-wrap: wrap;
-  margin-top: 30px;
+  gap: 15px;
+  margin: 20px;
 }
 
 .ramo {
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  width: 150px;
+  width: 180px;
   text-align: center;
   color: white;
   font-weight: bold;
+  background-color: #f06292; /* color rosado principal */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
 }
 
-.ramo[data-estado="aprobado"] {
-  background-color: green;
-}
-
-.ramo[data-estado="en curso"] {
-  background-color: orange;
-}
-
-.ramo[data-estado="pendiente"] {
-  background-color: gray;
+.ramo:hover {
+  transform: scale(1.05);
 }
 
 .descripcion {
   margin-top: 30px;
-  background-color: white;
+  background-color: #fff;
   padding: 15px;
   border-radius: 10px;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  border: 2px solid #f8bbd0;
+  color: #880e4f;
 }
