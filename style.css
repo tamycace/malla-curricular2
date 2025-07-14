@@ -31,20 +31,30 @@ h1, h2 {
   padding: 10px;
   border-radius: 12px;
   cursor: pointer;
-  width: 160px;
+  width: 180px;
   text-align: center;
-  color: white;
   font-weight: bold;
   margin: 10px auto;
-  transition: transform 0.2s ease-in-out, background-color 0.3s;
+  transition: transform 0.2s ease-in-out;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  position: relative;
 }
 
 .ramo:hover {
   transform: scale(1.05);
 }
 
-/* TACHADO diagonal */
+/* ESTADOS */
+.ramo.disponible {
+  background-color: #ad1457; /* rosado oscuro */
+  color: white;
+}
+
+.ramo.no-disponible {
+  background-color: #f8bbd0; /* rosado claro */
+  color: #880e4f;
+}
+
 .ramo.aprobado {
   background-color: #fce4ec !important;
   color: #880e4f;
@@ -62,13 +72,7 @@ h1, h2 {
   transform: rotate(-45deg);
 }
 
-/* Paleta rosada jerárquica */
-.rosado-1 { background-color: #ad1457; } /* más oscuro */
-.rosado-2 { background-color: #d81b60; }
-.rosado-3 { background-color: #ec407a; }
-.rosado-4 { background-color: #f06292; }
-.rosado-5 { background-color: #f8bbd0; } /* más claro */
-
+/* Panel de descripción */
 .descripcion {
   margin-top: 30px;
   background-color: #fff;
