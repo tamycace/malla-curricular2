@@ -93,3 +93,30 @@ h1, h2 {
   border: 2px solid #f8bbd0;
   color: #880e4f;
 }
+.malla {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.malla::-webkit-scrollbar {
+  height: 10px;
+}
+
+.malla::-webkit-scrollbar-thumb {
+  background: #ad1457;
+  border-radius: 5px;
+}
+
+.semestre {
+  flex: 0 0 280px;
+}
+
+.semestre h2 {
+  text-align: center;
+}
