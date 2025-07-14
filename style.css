@@ -2,7 +2,7 @@
 body {
   font-family: sans-serif;
   margin: 20px;
-  background-color: #fff0f5;
+  background-color: #ffffff; /* fondo blanco */
 }
 
 h1, h2 {
@@ -30,7 +30,7 @@ h1, h2 {
 }
 
 .semestre {
-  flex: 0 0 280px;
+  flex: 0 0 280px; /* mantiene todos los semestres en fila */
 }
 
 .semestre h2 {
@@ -51,24 +51,20 @@ h1, h2 {
   position: relative;
 }
 
-/* Interacción visual */
 .ramo:hover {
   transform: scale(1.05);
 }
 
-/* Estado: Disponible (rosado oscuro) */
 .ramo.disponible {
   background-color: #ad1457;
   color: white;
 }
 
-/* Estado: No disponible (rosado claro) */
 .ramo.no-disponible {
   background-color: #f8bbd0;
   color: #880e4f;
 }
 
-/* Estado: Aprobado (tachado en diagonal) */
 .ramo.aprobado {
   background-color: #fce4ec !important;
   color: #880e4f;
@@ -86,7 +82,6 @@ h1, h2 {
   transform: rotate(-45deg);
 }
 
-/* Panel inferior de información */
 .descripcion {
   margin-top: 30px;
   background-color: #fff;
