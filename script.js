@@ -12,7 +12,7 @@ function mostrarInfo(elemento) {
 document.addEventListener('DOMContentLoaded', () => {
   const ramos = document.querySelectorAll('.ramo');
 
-  // Restaurar ramos aprobados desde localStorage
+  // Restaurar estado aprobado desde almacenamiento local
   ramos.forEach(ramo => {
     const id = ramo.dataset.id;
     if (localStorage.getItem(id) === 'aprobado') {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Escuchar doble clic para marcar como aprobado
+  // Agregar eventos de doble clic
   ramos.forEach(ramo => {
     ramo.addEventListener('dblclick', () => {
       const id = ramo.dataset.id;
@@ -40,20 +40,15 @@ function actualizarDisponibilidad() {
   ramos.forEach(ramo => {
     if (ramo.classList.contains('aprobado')) return;
 
-    const requisitos = (ramo.dataset.requisitos || "").split(",").map(r => r.trim()).filter(Boolean);
+    const requisitosTexto = ramo.getAttribute('data-requisitos');
+    const requisitos = requisitosTexto ? requisitosTexto.split(',').map(r => r.trim()) : [];
 
-    // Si no tiene requisitos, se considera disponible automáticamente
     const disponibles = requisitos.length === 0 || requisitos.every(id => {
-      const req = document.querySelector(`.ramo[data-id="${id}"]`);
-      return req && req.classList.contains('aprobado');
+      const prereq = document.querySelector(`.ramo[data-id="${id}"]`);
+      return prereq && prereq.classList.contains('aprobado');
     });
 
     ramo.classList.remove('disponible', 'no-disponible');
-
-    if (disponibles) {
-      ramo.classList.add('disponible');
-    } else {
-      ramo.classList.add('no-disponible');
-    }
+    ramo.classList.add(disponibles ? 'disponible' : 'no-disponible');
   });
 }
