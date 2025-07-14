@@ -1,3 +1,4 @@
+
 body {
   font-family: sans-serif;
   margin: 20px;
@@ -9,22 +10,20 @@ h1, h2 {
   color: #880e4f;
 }
 
-/* CONTENEDOR DE SEMESTRES */
 .malla {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: 15px;
+  gap: 40px; /* AUMENTA el espacio entre semestres */
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .malla::-webkit-scrollbar {
   height: 10px;
 }
-
 .malla::-webkit-scrollbar-thumb {
   background: #ad1457;
   border-radius: 5px;
@@ -39,7 +38,6 @@ h1, h2 {
   color: #ad1457;
 }
 
-/* BLOQUES DE RAMOS */
 .ramo {
   padding: 12px;
   border-radius: 12px;
@@ -84,11 +82,11 @@ h1, h2 {
   transform: rotate(-45deg);
 }
 
-/* PANEL DE DESCRIPCIÓN ABAJO */
+/* Panel inferior de descripción si se usa */
 .descripcion {
   margin-top: 20px;
   background-color: #fff;
-  padding: 15px;
+  padding: 12px;
   border-radius: 10px;
   max-width: 400px;
   text-align: center;
