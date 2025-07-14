@@ -1,3 +1,4 @@
+
 body {
   font-family: sans-serif;
   margin: 20px;
@@ -12,83 +13,62 @@ h1, h2 {
 .malla {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   gap: 15px;
   overflow-x: auto;
+  scroll-behavior: smooth;
   padding: 10px;
   margin-bottom: 40px;
-  border-bottom: 2px dashed #f8bbd0;
+}
+
+.malla::-webkit-scrollbar {
+  height: 10px;
+}
+.malla::-webkit-scrollbar-thumb {
+  background: #ad1457;
+  border-radius: 5px;
 }
 
 .semestre {
-  min-width: 300px;
+  flex: 0 0 280px;
 }
 
 .semestre h2 {
   text-align: center;
+  color: #ad1457;
 }
 
 .ramo {
-  padding: 10px;
-  border-radius: 12px;
-  cursor: pointer;
-  width: 160px;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  margin: 10px auto;
-  transition: transform 0.2s ease-in-out, background-color 0.3s;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-}
-
-.ramo:hover {
-  transform: scale(1.05);
-}
-
-/* TACHADO diagonal */
-.ramo.aprobado {
-  background-color: #fce4ec !important;
-  color: #880e4f;
-  position: relative;
-  opacity: 0.6;
-}
-
-.ramo.aprobado::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: -5%;
-  width: 110%;
-  border-top: 3px solid #880e4f;
-  transform: rotate(-45deg);
-}
-
-.ramo {
-  padding: 10px;
+  padding: 12px;
   border-radius: 12px;
   cursor: pointer;
   width: 100%;
   text-align: center;
   font-weight: bold;
-  margin: 10px auto;
+  margin: 12px auto;
   transition: transform 0.2s ease-in-out;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
   position: relative;
 }
 
+/* Interacción visual */
 .ramo:hover {
   transform: scale(1.05);
 }
 
+/* Estado: Disponible (rosado oscuro) */
 .ramo.disponible {
   background-color: #ad1457;
   color: white;
 }
 
+/* Estado: No disponible (rosado claro) */
 .ramo.no-disponible {
   background-color: #f8bbd0;
   color: #880e4f;
 }
 
+/* Estado: Aprobado (tachado en diagonal) */
 .ramo.aprobado {
   background-color: #fce4ec !important;
   color: #880e4f;
@@ -106,6 +86,7 @@ h1, h2 {
   transform: rotate(-45deg);
 }
 
+/* Panel inferior de información */
 .descripcion {
   margin-top: 30px;
   background-color: #fff;
