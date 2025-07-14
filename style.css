@@ -77,7 +77,7 @@ h1, h2 {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 60%;
+  width: 20%;
   height: 0;
   border-top: 2px solid #880e4f;
   transform: translate(-50%, -50%) rotate(-45deg);
