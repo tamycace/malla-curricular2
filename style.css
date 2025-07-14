@@ -1,3 +1,4 @@
+
 body {
   font-family: sans-serif;
   margin: 20px;
@@ -11,16 +12,25 @@ h1, h2 {
 
 .malla {
   display: flex;
-  flex-wrap: wrap; /* permite múltiples filas */
+  flex-direction: row;
   gap: 15px;
-  justify-content: center;
+  overflow-x: auto;
+  scroll-behavior: smooth;
   padding: 10px;
   margin-bottom: 40px;
 }
 
+.malla::-webkit-scrollbar {
+  height: 10px;
+}
+
+.malla::-webkit-scrollbar-thumb {
+  background: #ad1457;
+  border-radius: 5px;
+}
+
 .semestre {
   min-width: 280px;
-  max-width: 300px;
 }
 
 .semestre h2 {
@@ -44,7 +54,6 @@ h1, h2 {
   transform: scale(1.05);
 }
 
-/* Estados visuales */
 .ramo.disponible {
   background-color: #ad1457;
   color: white;
