@@ -46,3 +46,8 @@ h1, h2 {
   border: 2px solid #f8bbd0;
   color: #880e4f;
 }
+.ramo.aprobado {
+  text-decoration: line-through;
+  background-color: #f8bbd0 !important; /* rosado claro */
+  opacity: 0.6;
+}
