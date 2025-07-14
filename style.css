@@ -13,6 +13,7 @@ h1, h2 {
 .malla {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap; /* no permite saltar de línea */
   gap: 15px;
   overflow-x: auto;
   scroll-behavior: smooth;
@@ -23,14 +24,13 @@ h1, h2 {
 .malla::-webkit-scrollbar {
   height: 10px;
 }
-
 .malla::-webkit-scrollbar-thumb {
   background: #ad1457;
   border-radius: 5px;
 }
 
 .semestre {
-  min-width: 280px;
+  flex: 0 0 280px; /* ancho fijo por semestre */
 }
 
 .semestre h2 {
@@ -92,31 +92,4 @@ h1, h2 {
   text-align: center;
   border: 2px solid #f8bbd0;
   color: #880e4f;
-}
-.malla {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 15px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 10px;
-  margin-bottom: 40px;
-}
-
-.malla::-webkit-scrollbar {
-  height: 10px;
-}
-
-.malla::-webkit-scrollbar-thumb {
-  background: #ad1457;
-  border-radius: 5px;
-}
-
-.semestre {
-  flex: 0 0 280px;
-}
-
-.semestre h2 {
-  text-align: center;
 }
